@@ -7,17 +7,17 @@
 //
 
 import Foundation
-struct TopRated: Decodable {
+struct TopRated {
     let page: Int
     let total_results: Int
     let total_pages: Int
-    var results: [Movie]
+    let results: [Movie]
     
     init(jsonData: Dictionary<String, Any>) {
         self.page = jsonData["page"] as? Int ?? 0
         self.total_results = jsonData["total_results"] as? Int ?? 0
         self.total_pages = jsonData["total_pages"] as? Int ?? 0
-        var result: [Movie] = [Movie]()
+        var result = [Movie]()
         if let moviesList = jsonData["results"] as? [[String: Any]] {
             moviesList.forEach( { movie in
                 result.append(Movie(movie: movie))
@@ -26,7 +26,7 @@ struct TopRated: Decodable {
         self.results = result
     }
 }
-struct Movie: Decodable {
+struct Movie {
     let title: String
     let overview: String
     let vote_count: Int
