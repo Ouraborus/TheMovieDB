@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="TableViewCell" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="TheMovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="403" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTo-fI-Fr4">
+                        <rect key="frame" x="0.0" y="0.0" width="149" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="149" id="RT0-df-mLs"/>
+                            <constraint firstAttribute="height" constant="200" id="Zna-0g-SPb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nps-uI-Bit">
+                        <rect key="frame" x="159" y="18" width="246" height="16.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Nps-uI-Bit" firstAttribute="leading" secondItem="oTo-fI-Fr4" secondAttribute="trailing" constant="10" id="0gp-Vh-bw0"/>
+                    <constraint firstItem="oTo-fI-Fr4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7LA-E0-8XP"/>
+                    <constraint firstItem="oTo-fI-Fr4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qc7-31-syA"/>
+                    <constraint firstItem="Nps-uI-Bit" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="gA1-yt-lRG"/>
+                    <constraint firstAttribute="bottom" secondItem="oTo-fI-Fr4" secondAttribute="bottom" id="jP6-0k-hJT"/>
+                    <constraint firstItem="Nps-uI-Bit" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="jSR-Bv-CNC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Nps-uI-Bit" secondAttribute="bottom" constant="157" id="wmV-HP-exm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieImage" destination="oTo-fI-Fr4" id="dn1-Cy-pRW"/>
+                <outlet property="movieTitle" destination="Nps-uI-Bit" id="VQF-5J-Ycz"/>
+            </connections>
+            <point key="canvasLocation" x="86" y="134"/>
+        </tableViewCell>
+    </objects>
+</document>

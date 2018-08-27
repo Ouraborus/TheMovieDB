@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
     @IBOutlet weak var MoviesCollection: UICollectionView!
     var page = 1
     var movies: [Movie] = []
@@ -61,6 +60,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.MoviesCollection.reloadData()
         }
     }
-
 }
 
