@@ -42,7 +42,6 @@ extension InitialViewController: MovieListDelegate {
         detailView.movie = movies[movieIndex.item]
         //Push VC in the NavController
         self.navigationController!.pushViewController(detailView, animated: true)
-//        present(detailView, animated: true, completion: nil)
     }
     
     func numberOfItems() -> Int {

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="TheMovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="259"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="208" height="259"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K0l-i3-m3D">
+                        <rect key="frame" x="0.0" y="0.0" width="208" height="259"/>
+                    </imageView>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-Y4-j21">
+                        <rect key="frame" x="0.0" y="221" width="208" height="38"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="avx-eR-tXp">
+                            <rect key="frame" x="0.0" y="0.0" width="208" height="38"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-tl-YB0">
+                                    <rect key="frame" x="10" y="0.0" width="188" height="38"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="9fv-tl-YB0" secondAttribute="bottom" id="TVq-Pj-3kp"/>
+                                <constraint firstItem="9fv-tl-YB0" firstAttribute="top" secondItem="avx-eR-tXp" secondAttribute="top" id="e6v-gi-hQb"/>
+                                <constraint firstItem="9fv-tl-YB0" firstAttribute="leading" secondItem="avx-eR-tXp" secondAttribute="leading" constant="10" id="rWl-8h-7iY"/>
+                                <constraint firstAttribute="trailing" secondItem="9fv-tl-YB0" secondAttribute="trailing" constant="10" id="vWQ-ov-lve"/>
+                            </constraints>
+                        </view>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29566461267605626" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="0MM-3H-V4o"/>
+                        </constraints>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="cqz-Y4-j21" firstAttribute="leading" secondItem="K0l-i3-m3D" secondAttribute="leading" id="BrU-mS-Beh"/>
+                <constraint firstItem="K0l-i3-m3D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KeW-K2-jdk"/>
+                <constraint firstItem="cqz-Y4-j21" firstAttribute="bottom" secondItem="K0l-i3-m3D" secondAttribute="bottom" id="XC2-1u-l6G"/>
+                <constraint firstAttribute="trailing" secondItem="K0l-i3-m3D" secondAttribute="trailing" id="gvQ-Bl-N3A"/>
+                <constraint firstItem="K0l-i3-m3D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jyY-2e-rOU"/>
+                <constraint firstAttribute="bottom" secondItem="K0l-i3-m3D" secondAttribute="bottom" id="wjv-xR-qtu"/>
+                <constraint firstItem="cqz-Y4-j21" firstAttribute="trailing" secondItem="K0l-i3-m3D" secondAttribute="trailing" id="x2f-zn-d2p"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="208" height="259"/>
+            <connections>
+                <outlet property="movieImage" destination="K0l-i3-m3D" id="pr3-Ii-eQ1"/>
+                <outlet property="movieTitle" destination="9fv-tl-YB0" id="VCz-oL-9XF"/>
+            </connections>
+            <point key="canvasLocation" x="104" y="156.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

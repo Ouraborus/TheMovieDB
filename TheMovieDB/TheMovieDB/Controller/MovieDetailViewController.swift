@@ -19,7 +19,7 @@ import AlamofireImage
 class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var movieOverview: UITextView!
+    @IBOutlet weak var movieOverview: UILabel!
     var movie: Movie?
     override func viewDidLoad() {
         super.viewDidLoad()

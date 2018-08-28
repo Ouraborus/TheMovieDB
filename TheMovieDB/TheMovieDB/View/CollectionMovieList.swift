@@ -14,6 +14,7 @@ class CollectionMovieList: UICollectionView, UICollectionViewDelegate, UICollect
     
     init(layout: UICollectionViewLayout) {
         super.init(frame: CGRect.zero, collectionViewLayout: layout)
+        self.delegate = self
         self.dataSource = self
         self.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
     }
@@ -29,6 +30,9 @@ class CollectionMovieList: UICollectionView, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ListCell
         moviesListDelegate?.configure(cell: cell, atIndexPath: indexPath)
         return cell as! UICollectionViewCell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        moviesListDelegate?.movieDetailView(movieIndex: indexPath)
     }
 }
 

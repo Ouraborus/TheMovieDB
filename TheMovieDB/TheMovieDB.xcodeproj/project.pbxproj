@@ -99,6 +99,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9D07A0E21358A7E00D510F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C90A078C21309FD300FABE79 /* TableMovieList.swift */,
+				C9447D4B2134450C006415D6 /* CollectionMovieList.swift */,
+				C9447D5321346218006415D6 /* TableViewCell.swift */,
+				C9447D5421346218006415D6 /* TableViewCell.xib */,
+				C9447D4F213446CA006415D6 /* CollectionViewCell.swift */,
+				C9447D50213446CA006415D6 /* CollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9D07A0F21358AA200D510F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9AE2E712124B26C00C32981 /* MovieData.swift */,
+				C9B07D0B2125CD1300152FFB /* MovieFacade.swift */,
+				C90A0788213045CD00FABE79 /* MovieListDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9D07A1021358AC000D510F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9C04560212DA6B300DBC7F8 /* TableController.swift */,
+				F50BD2AC1E37A41D008821F8 /* ViewController.swift */,
+				C90A078A2130699B00FABE79 /* InitialViewController.swift */,
+				C9447D57213489B6006415D6 /* MovieDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F50BD29E1E37A41D008821F8 = {
 			isa = PBXGroup;
 			children = (
@@ -122,24 +156,14 @@
 		F50BD2A91E37A41D008821F8 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				C9D07A0F21358AA200D510F5 /* Model */,
+				C9D07A0E21358A7E00D510F5 /* View */,
+				C9D07A1021358AC000D510F5 /* Controller */,
 				F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */,
-				C9C04560212DA6B300DBC7F8 /* TableController.swift */,
-				F50BD2AC1E37A41D008821F8 /* ViewController.swift */,
-				F50BD2AE1E37A41D008821F8 /* Main.storyboard */,
 				F50BD2B11E37A41D008821F8 /* Assets.xcassets */,
+				F50BD2AE1E37A41D008821F8 /* Main.storyboard */,
 				F50BD2B31E37A41D008821F8 /* LaunchScreen.storyboard */,
 				F50BD2B61E37A41D008821F8 /* Info.plist */,
-				C9AE2E712124B26C00C32981 /* MovieData.swift */,
-				C9B07D0B2125CD1300152FFB /* MovieFacade.swift */,
-				C90A0788213045CD00FABE79 /* MovieListDelegate.swift */,
-				C90A078A2130699B00FABE79 /* InitialViewController.swift */,
-				C9447D57213489B6006415D6 /* MovieDetailViewController.swift */,
-				C90A078C21309FD300FABE79 /* TableMovieList.swift */,
-				C9447D4B2134450C006415D6 /* CollectionMovieList.swift */,
-				C9447D5321346218006415D6 /* TableViewCell.swift */,
-				C9447D5421346218006415D6 /* TableViewCell.xib */,
-				C9447D4F213446CA006415D6 /* CollectionViewCell.swift */,
-				C9447D50213446CA006415D6 /* CollectionViewCell.xib */,
 			);
 			path = TheMovieDB;
 			sourceTree = "<group>";
