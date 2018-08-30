@@ -7,7 +7,6 @@
 //
 import UIKit
 class InitialViewController: UIViewController {
-    var page = 1
     var list: MovieList!
     var movies: [Movie] = []
     
@@ -25,7 +24,7 @@ class InitialViewController: UIViewController {
         self.list.moviesListDelegate = self
         self.view.addSubview((self.list as! UIView))
         //Interacting with Facade
-        MovieFacade.fetchTopRatedMovies(page: String(describing: page)){ [weak self] response in
+        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
             self?.movies = response.results
             self?.list.reloadData()
         }
@@ -53,5 +52,10 @@ extension InitialViewController: MovieListDelegate {
         cell.movieImage.af_setImage(withURL: movies[atIndexPath.item].poster_path, placeholderImage: UIImage(named: "movie_placeholder"), imageTransition: .crossDissolve(0.3))
     }
     
-    
+    func fetchNewData() {
+        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
+            self?.movies.append(contentsOf: response.results)
+            self?.list.reloadData()
+        }
+    }
 }

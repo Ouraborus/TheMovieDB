@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var MoviesCollection: UICollectionView!
-    var page = 1
     var movies: [Movie] = []
     
     override func viewDidLoad() {
@@ -20,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         MoviesCollection.dataSource = self
         MoviesCollection.delegate = self
         //Interacting with Facade
-        MovieFacade.fetchTopRatedMovies(page: String(describing: page)){ [weak self] response in
+        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
             self?.movies = response.results
             self?.MoviesCollection.reloadData()
         }
@@ -53,7 +52,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Change 10.0 to adjust the distance from bottom
         if maximumOffset - currentOffset <= 10.0 {
             page += 1
-            MovieFacade.fetchTopRatedMovies(page: String(describing: page)){ [weak self] response in
+            MovieFacade.fetchTopRatedMovies(){ [weak self] response in
                 self?.movies.append(contentsOf: response.results)
                 self?.MoviesCollection.reloadData()
             }

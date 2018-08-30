@@ -37,4 +37,13 @@ class TableMovieList: UITableView, UITableViewDataSource,UITableViewDelegate, Mo
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         moviesListDelegate?.movieDetailView(movieIndex: indexPath)
     }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        // Change 10.0 to adjust the distance from bottom
+        if maximumOffset - currentOffset <= 10.0 {
+            moviesListDelegate?.fetchNewData()
+        }
+    }
 }

@@ -21,7 +21,7 @@ class TableController: UIViewController, UITableViewDelegate, UITableViewDataSou
         MoviesTable.delegate = self
         
         //Interacting with Facade
-        MovieFacade.fetchTopRatedMovies(page: "1"){ [weak self] response in
+        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
             self?.movies = response.results
             self?.MoviesTable.reloadData()
         }

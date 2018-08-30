@@ -14,6 +14,7 @@ protocol MovieListDelegate: class {
     func numberOfItems() -> Int
     func configure(cell: ListCell, atIndexPath: IndexPath)
     func movieDetailView(movieIndex: IndexPath)
+    func fetchNewData()
 }
 
 protocol ListCell: class {

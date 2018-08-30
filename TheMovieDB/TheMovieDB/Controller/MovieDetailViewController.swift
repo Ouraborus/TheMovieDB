@@ -9,12 +9,6 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-//protocol MovieDetail: class {
-//    func showDetailsOf(movie: Movie)
-//}
-//protocol MovieDetailDelegate: class {
-//    weak var movieDetailDelegate: MovieDetail? {get set}
-//}
 
 class MovieDetailViewController: UIViewController {
     @IBOutlet weak var moviePoster: UIImageView!
@@ -29,7 +23,7 @@ class MovieDetailViewController: UIViewController {
     var movie: Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
-        moviePoster.af_setImage(withURL:(movie?.backdrop_path)!)
+        moviePoster.af_setImage(withURL:(movie?.backdrop_path)!, imageTransition: .crossDissolve(0.3))
         movieImage.af_setImage(withURL: (movie?.poster_path)!)
         movieTitle.text = movie?.title
         movieOverview.text = movie?.overview
@@ -40,9 +34,4 @@ class MovieDetailViewController: UIViewController {
         
     }
 }
-//extension MovieDetailViewController: MovieDetail {
-//    func showDetailsOf(movie: Movie) {
-//        print(movie)
-//    }
-//}
 
