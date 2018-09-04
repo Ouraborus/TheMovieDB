@@ -36,11 +36,14 @@ class InitialViewController: UIViewController {
 extension InitialViewController: MovieListDelegate {
     
     func movieDetailView(movieIndex:  IndexPath) {
-        let detailView = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        let detailView = MovieDetailViewController()
+        
+//        let detailView = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         //Set movie data at MovieDetailViewController
         detailView.movie = movies[movieIndex.item]
-        //Push VC in the NavController
         self.navigationController!.pushViewController(detailView, animated: true)
+        //Push VC in the NavController
+//        self.navigationController!.pushViewController(detailView, animated: true)
     }
     
     func numberOfItems() -> Int {
