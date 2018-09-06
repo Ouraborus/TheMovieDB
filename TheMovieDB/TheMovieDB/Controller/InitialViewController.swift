@@ -6,6 +6,7 @@
 //  Copyright © 2018 Globant. All rights reserved.
 //
 import UIKit
+
 class InitialViewController: UIViewController {
     var list: MovieList!
     var movies: [Movie] = []
@@ -24,7 +25,7 @@ class InitialViewController: UIViewController {
         self.list.moviesListDelegate = self
         self.view.addSubview((self.list as! UIView))
         //Interacting with Facade
-        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
+        MovieFacade.fetchTopRatedMovies(){ [weak self] (response, error) in
             self?.movies = response.results
             self?.list.reloadData()
         }
@@ -36,14 +37,12 @@ class InitialViewController: UIViewController {
 extension InitialViewController: MovieListDelegate {
     
     func movieDetailView(movieIndex:  IndexPath) {
-        let detailView = MovieDetailViewController()
-        
-//        let detailView = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        //        let detailView = MovieDetailViewController()
+        let detailView = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         //Set movie data at MovieDetailViewController
         detailView.movie = movies[movieIndex.item]
-        self.navigationController!.pushViewController(detailView, animated: true)
         //Push VC in the NavController
-//        self.navigationController!.pushViewController(detailView, animated: true)
+        self.navigationController!.pushViewController(detailView, animated: true)
     }
     
     func numberOfItems() -> Int {
@@ -56,7 +55,7 @@ extension InitialViewController: MovieListDelegate {
     }
     
     func fetchNewData() {
-        MovieFacade.fetchTopRatedMovies(){ [weak self] response in
+        MovieFacade.fetchTopRatedMovies(){ [weak self] (response, error) in
             self?.movies.append(contentsOf: response.results)
             self?.list.reloadData()
         }
